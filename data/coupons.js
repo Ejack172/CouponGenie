@@ -2,9 +2,9 @@ export const featuredCoupons = [
   {
     id: 'physics-wallah',
     title: 'Physics Wallah',
-    discount: 'Rs. 50 OFF',
+    discount: 'FLAT 85% OFF',
     code: '9735ORBF',
-    description: 'Get flat ₹50 discount on all batches (Lakshya, Yakeen, Arjuna).',
+    description: 'Get flat 85% discount on all batches (Lakshya, Yakeen, Arjuna & all batches).',
     link: '/physics-wallah-coupon-code',
     verified: true,
     color: '#5A4FCF',
