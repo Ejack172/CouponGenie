@@ -16,8 +16,12 @@ export default function CouponBox({ coupon }) {
     return (
         <div className={styles.box}>
             <div className={styles.top}>
-                <div className={styles.logo} style={{ backgroundColor: coupon.color }}>
-                    {coupon.title.charAt(0)}
+                <div className={styles.logo} style={{ backgroundColor: coupon.logo ? 'white' : coupon.color }}>
+                    {coupon.logo ? (
+                        <img src={coupon.logo} alt={coupon.title} style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: 'inherit' }} />
+                    ) : (
+                        coupon.title.charAt(0)
+                    )}
                 </div>
                 <div className={styles.meta}>
                     <h2 className={styles.title}>{coupon.title}</h2>

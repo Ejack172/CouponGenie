@@ -8,6 +8,7 @@ export const featuredCoupons = [
     link: '/physics-wallah-coupon-code',
     verified: true,
     color: '#5A4FCF',
+    logo: '/logos/pw-logo.png',
     slug: 'physics-wallah-coupon-code',
     titleTag: 'PW Coupon Code 2026: Get Up to 90% OFF on JEE, NEET & All Batches | CouponGenie',
     h1: 'PW Coupon Code 2026: Latest Working Physics Wallah Coupon Codes & Offers',
