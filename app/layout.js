@@ -19,6 +19,9 @@ const poppins = Poppins({
 export const metadata = {
   title: "CouponGenie - Best Deals & Verified Coupons",
   description: "Find verified works coupons for students, shopping, apps, and OTT platforms. Save money with CouponGenie.",
+  verification: {
+    google: 'kI5OSqkV1OqPuaLQstKi-0sRKpO056vqNxSEFLBYIPg',
+  },
 };
 
 export default function RootLayout({ children }) {
