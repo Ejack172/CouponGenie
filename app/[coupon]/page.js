@@ -16,8 +16,11 @@ export async function generateMetadata({ params }) {
     if (!data) return {};
 
     return {
-        title: data.h1,
+        title: data.titleTag || data.h1,
         description: data.intro,
+        alternates: {
+            canonical: `https://coupongenie.in/${data.slug}/`,
+        },
     };
 }
 
@@ -29,18 +32,42 @@ export default async function CouponPage({ params }) {
         notFound();
     }
 
-    const jsonLd = {
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: data.faqs.map(faq => ({
-            '@type': 'Question',
-            name: faq.q,
-            acceptedAnswer: {
-                '@type': 'Answer',
-                text: faq.a
+    const jsonLd = [
+        {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: data.faqs.map(faq => ({
+                '@type': 'Question',
+                name: faq.q,
+                acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: faq.a
+                }
+            }))
+        },
+        {
+            '@context': 'https://schema.org',
+            '@type': 'Offer',
+            name: data.h1,
+            description: data.description,
+            price: '0',
+            priceCurrency: 'INR',
+            availability: 'https://schema.org/InStock',
+            url: `https://coupongenie.in/${data.slug}/`,
+            couponCode: data.code,
+            seller: {
+                '@type': 'Organization',
+                name: data.title
             }
-        }))
-    };
+        },
+        {
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'CouponGenie',
+            url: 'https://coupongenie.in',
+            logo: 'https://coupongenie.in/favicon.ico'
+        }
+    ];
 
     return (
         <article>
