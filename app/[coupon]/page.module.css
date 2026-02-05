@@ -47,6 +47,13 @@
     line-height: 1.8;
 }
 
+@media (max-width: 768px) {
+    .mainContent {
+        font-size: 1rem;
+        line-height: 1.9;
+    }
+}
+
 .mainContent h2 {
     margin-top: 2rem;
     margin-bottom: 1rem;

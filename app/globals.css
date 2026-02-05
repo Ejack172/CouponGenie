@@ -59,6 +59,25 @@ li {
   margin-bottom: 0.5rem;
 }
 
+/* Mobile-specific adjustments for better touch/readability */
+@media (max-width: 768px) {
+  p {
+    font-size: 1.05rem !important;
+    line-height: 2.0 !important;
+    margin-bottom: 1.75rem !important;
+    letter-spacing: 0.01em;
+    /* Slight letter spacing for better readability */
+  }
+
+  li {
+    font-size: 1.05rem !important;
+    line-height: 2.0 !important;
+    margin-bottom: 1rem !important;
+    padding-left: 0.25rem;
+    /* Slight padding for lists */
+  }
+}
+
 /* Headings should breathe slightly */
 h2 {
   margin-bottom: 0.75rem;
